@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login Register</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+<style>
+html {
+    padding:50px;
+}
+body {
+  
+    background-image: url("https://media.giphy.com/media/WoD6JZnwap6s8/giphy.gif");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+#EA {
+    width: 150px;
+    position: relative;
+    top: 10px;
+}
+    #nyancat {
+    width: 300px;
+    position: relative;
+    top: 10px;
+    animation-name: nyan;
+    animation-duration: 30s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    }
+    @keyframes nyan {
+    0% {left: -400px;}
+    100% {left: 1800px;}
+}
+</style>
+
+</head>
+<body>
+        <iframe src="https://www.albinoblacksheep.com/audio/mp3/Nyanyanyanyanyanyanya.mp3" allow="autoplay" style="display:none" id="iframeAudio">
+        </iframe>
+        <audio autoplay loop  id="playAudio">
+            <source src="https://www.albinoblacksheep.com/audio/mp3/Nyanyanyanyanyanyanya.mp3">
+        <script>
+        var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
+            if(!isChrome){
+              $('#iframeAudio').remove()
+            }
+          else{
+             $('#playAudio').remove() //just to make sure that it will not have 2x audio in the background 
+          }
+        </script>
+        </audio>
+        <img id="nyancat" src="https://s2.wp.com/wp-content/themes/a8c/automattic-2011/page-templates/assets/2016-annual-report/images/cat5.gif">
+    <div class="container">
+        <div class="page-header text-center">
+            <img id="EA" src="https://cdn.freebiesupply.com/logos/large/2x/ea-logo-black-and-white.png" alt="EA">
+            <a href="https://cooltext.com"><img src="https://images.cooltext.com/5323344.gif" width="892" height="94" alt="Microtransaction Simulator" /></a><br>
+            <a href="/logout" class="btn btn-danger btn-sm">Log Out</a>&nbsp&nbsp&nbsp&nbsp&nbsp<a style="color:white;">EA Points: <span id="EAPoints">0</span></a></a>
+        </div>
+
+        <div class="row">
+            <div class="co-sm-12">
+                <div class="well">
+                    <h3><span class="fa fa-user"></span> Welcome <%= user.username %></h3>
+                    <br><br><br>
+                    <h4>What can you buy with EA Points? Nothing! But you get to feel a sense of Pride and Accomplishment!</h4><br><p style="font-size:7px;">We are also not responsible if you lose all your EA Points when you refresh the page.</p>
+                    <br><br><br>
+                    <img src="https://i.ibb.co/0cYVWkG/10.png" height="200"/>
+                    <img src="https://i.ibb.co/Sds4hJt/20.png" height="200"/>
+                    <img src="https://i.ibb.co/G2ZxL2D/50.png" height="200"/>
+                    <br>
+                    <br>
+                    <div style="position: relative; left: 115px;"><button id="button1" value="Count">Buy this for £9.99</button>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                        <button id="button2" value="Count">Buy this for £19.99</button>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                        <button id="button3" value="Count">Buy this for £49.99</button>
+                    </div>
+                    <br>
+                    <br>
+                    <div style="position: relative; left: 355px;"><img src="https://i.ibb.co/M1JttVV/100.png" height="200"/>
+                        <br>
+                        <br>
+                    </div>
+                    <div style="position: relative; left: 465px;"><button id="button4" value="Count">Buy this for £99.99</button></div>
+                        <script>
+                        var count = 0;
+                        var butto1 = document.getElementById("button1");
+                        var button2 = document.getElementById("button2");
+                        var button3 = document.getElementById("button3");
+                        var button4 = document.getElementById("button4");
+                        var display = document.getElementById("EAPoints");
+    
+                        button1.onclick = function(){
+                        count+=10;
+                        display.innerHTML = count;
+                        }
+                        button2.onclick = function(){
+                        count+=20;
+                        display.innerHTML = count;
+                        }
+                        button3.onclick = function(){
+                        count+=50;
+                        display.innerHTML = count;
+                        }
+                        button4.onclick = function(){
+                        count+=100;
+                        display.innerHTML = count;
+                        }
+                        </script>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
